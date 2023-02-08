@@ -6,6 +6,11 @@
 
     .videos {
         flex: 7;
+        @media only screen and (max-width: 600px) {
+            flex: 0;
+            height: 0vh;
+            width: 0vw;
+        }
 
         @include flexCenter(column);
         height: 100%;
