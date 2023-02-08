@@ -25,6 +25,7 @@
         justify-content: flex-start;
         color: $black;
         width: 100%;
+        overflow: hidden;
 
         .image {
             flex: 1;
@@ -42,7 +43,7 @@
             align-items: flex-start;
             margin-left: 24px;
             width: 100%;
-            max-width: 600px;
+            // max-width: 600px;
 
             .header {
                 @include flexCenter(row);
@@ -55,7 +56,7 @@
                     font-weight: 600;
                     font-size: 1.6em;
                     margin-right: 24px;
-                    max-width: 300px;
+                    max-width: 250px;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -72,6 +73,7 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 font-size: 1.4em;
+                width: 380px;
             }
         }
     }

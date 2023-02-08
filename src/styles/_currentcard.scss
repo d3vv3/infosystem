@@ -45,11 +45,13 @@
         height: 100%;
         padding-top: 12px;
         width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
         .image {
             flex: 2;
             @include flexCenter(column);
-            align-items: flex-start;
+            height: 100%;
         }
 
         .info {
@@ -58,7 +60,7 @@
             @include flexCenter(column);
             justify-content: space-between;
             align-items: flex-start;
-            // margin-left: 24px;
+            margin-left: 24px;
             width: 100%;
 
             .talk-title {
