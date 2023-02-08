@@ -1,12 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPerson, faMapPin } from "@fortawesome/free-solid-svg-icons";
+import Marquee from "react-fast-marquee";
 import Image from 'next/image';
 
 export default function CurrentCard({event}) {
     return (
         <div className="card-container">
             <div className="header">
-                <span className="company">{event?.company ?? ""}</span>
+                {
+                    ((event?.company ?? "").length > 18) ?
+                    <Marquee className="company scrollable" gradientColor={"#ffff"}>
+                       <span style={{marginRight: 12}}>{event?.company ?? ""}</span></Marquee>
+                    : <span className="company">{event?.company ?? ""} {" "}</span>
+                }
                 <span className="hours">{event?.time ?? ""}</span>
             </div>
 
@@ -22,7 +28,13 @@ export default function CurrentCard({event}) {
                 </div>
 
                 <div className="info">
-                    <div className="talk-title">{event?.title ?? ""}</div>
+                    {
+                        ((event?.title?.replace(".", "") ?? "").length > 30) ?
+                        <Marquee className="talk-title scrollable" gradientColor={"#ffff"}>
+                            {event?.title?.replace(".", "") ?? "" + " "}
+                        </Marquee>
+                        : <div className="talk-title"> {event?.title?.replace(".", "") ?? ""} </div>
+                    }
                     <div className="speakers">
                         {console.log(event, event.speakers)}
                         {

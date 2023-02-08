@@ -64,6 +64,11 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
+
+                .scrollable {
+                    -webkit-mask-image:linear-gradient(to left, transparent, rgba(0,0,0,1) 10% 90%,transparent);
+                    mask-image:linear-gradient(to left, transparent, rgba(0,0,0,1) 10% 90%,transparent);
+                }
             
                 .hours {
                     font-weight: 300;
@@ -76,7 +81,12 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 font-size: 12pt;
-                width: 380px;
+                width: 100%;
+            }
+
+            .scrollable {
+                -webkit-mask-image:linear-gradient(to left, transparent, rgba(0,0,0,1) 10% 90%,transparent);
+                mask-image:linear-gradient(to left, transparent, rgba(0,0,0,1) 10% 90%,transparent);
             }
         }
     }

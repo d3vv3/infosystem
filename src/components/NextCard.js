@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Marquee from "react-fast-marquee";
 
 export default function NextCard({event}) {
     return (
@@ -15,12 +16,22 @@ export default function NextCard({event}) {
                 </div>
                 <div className="info">
                     <div className="header">
-                        <span className="company">{event?.company ?? ""}</span>
+                        {
+                            ((event?.company ?? "").length > 18) ?
+                            <Marquee className="company scrollable" gradientColor={"#ffff"}>
+                                <span style={{marginRight: 12}}>{event?.company ?? ""}</span></Marquee>
+                            : <span className="company">{event?.company ?? ""} {" "}</span>
+                        }
+                        
                         <span className="hours">{event?.time ?? ""}</span>
                     </div>
-                    <div className="next-talk-title">
-                        {event?.title?.replace(".", "") ?? ""}
-                    </div>
+                        {
+                            ((event?.title?.replace(".", "") ?? "").length > 30) ?
+                            <Marquee className="next-talk-title scrollable" gradientColor={"#ffff"}>
+                                <span style={{marginRight: 12}}>{(event?.title?.replace(".", "") ?? "")}</span>
+                            </Marquee>
+                            : <div className="next-talk-title"> {event?.title?.replace(".", "") ?? ""} </div>
+                        }
                 </div>
             </div>
 

@@ -33,6 +33,11 @@
             margin-right: 24px;
             overflow: hidden;
         }
+
+        .scrollable {
+            -webkit-mask-image:linear-gradient(to left, transparent, rgba(0,0,0,1) 10% 90%,transparent);
+            mask-image:linear-gradient(to left, transparent, rgba(0,0,0,1) 10% 90%,transparent);
+        }
     
         .hours {
             font-weight: 300;
@@ -76,6 +81,13 @@
                 text-overflow: ellipsis;
                 margin-bottom: 12px;
             }
+
+            .scrollable {
+                -webkit-mask-image:linear-gradient(to left, transparent, rgba(0,0,0,1) 10% 90%,transparent);
+                mask-image:linear-gradient(to left, transparent, rgba(0,0,0,1) 10% 90%,transparent);
+            }
+
+            
 
             .speakers {
                 font-weight: 300;
