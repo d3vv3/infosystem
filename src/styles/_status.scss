@@ -1,31 +1,31 @@
 .status-container {
     color: $white;
 
-    font-size: 12pt;
-    padding-bottom: 24px;
+    font-size: 8pt;
+    padding-bottom: 16px;
 
     .time {
         mix-blend-mode: overlay;
         font-weight: 800;
-        font-size: 42pt;
+        font-size: 32pt;
     }
 
     .temp {
         mix-blend-mode: overlay;
         font-weight: 400;
-        font-size: 24pt;
+        font-size: 16pt;
         text-transform: uppercase;
     }
 
     .date {
         mix-blend-mode: overlay;
         font-weight: 400;
-        font-size: 24pt;
+        font-size: 16pt;
         margin: 0;
     }
 
     .emoji {
-        font-size: 20pt;
+        font-size: 14pt;
         mix-blend-mode: normal;
     }
 
@@ -33,7 +33,7 @@
         mix-blend-mode: overlay;
         margin-top: 12px;
         font-weight: 300;
-        font-size: 20pt;
+        font-size: 14pt;
         margin: 0;
         display: inline;
     }

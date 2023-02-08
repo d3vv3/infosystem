@@ -32,7 +32,7 @@ export default function Agenda() {
     return (
         <div className="agenda-container">
             <video className="background-video" autoPlay loop muted>
-                <source src="/assets/gradient.mp4" type="video/mp4" />
+                <source src="/assets/gradient.webm" type="video/webm" />
             </video>
             <div className="agenda">
                 <Status />

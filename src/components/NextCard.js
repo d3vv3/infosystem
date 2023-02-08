@@ -9,8 +9,8 @@ export default function NextCard({event}) {
                         src={event?.logo ?? "https://satelec.etsit.upm.es/wp-content/uploads/2020/02/LogoSatelecCortopng.png"}
                         alt="Picture of the company"
                         style={{"objectFit": "contain"}}
-                        width={80}
-                        height={80}
+                        width={50}
+                        height={50}
                     />
                 </div>
                 <div className="info">

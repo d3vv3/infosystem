@@ -16,8 +16,8 @@ export default function CurrentCard({event}) {
                         src={event?.logo ?? "https://satelec.etsit.upm.es/wp-content/uploads/2020/02/LogoSatelecCortopng.png"}
                         alt={`${event?.company ?? ""} company logo`}
                         style={{"objectFit": "contain"}}
-                        width={120}
-                        height={120}
+                        width={80}
+                        height={80}
                     />
                 </div>
 
