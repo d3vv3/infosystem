@@ -27,20 +27,20 @@
 
         .company {
             font-weight: 600;
-            font-size: 1.6em;
+            font-size: 25px;
             margin-right: 24px;
             overflow: hidden;
         }
     
         .hours {
             font-weight: 300;
-            font-size: 1.6em;
+            font-size: 25px;
         }
     }
 
     .details {
         @include flexCenter(row);
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: flex-start;
         height: 100%;
         padding-top: 12px;
@@ -63,7 +63,7 @@
 
             .talk-title {
                 font-weight: 600;
-                font-size: 1.6em;
+                font-size: 24px;
                 width: 100%;
                 max-width: 21vw;
                 white-space: nowrap;
@@ -74,7 +74,7 @@
 
             .speakers {
                 font-weight: 300;
-                font-size: 1.4em;
+                font-size: 24px;
                 max-width: 600px;
                 white-space: nowrap;
                 overflow: hidden;
@@ -112,10 +112,11 @@
 
             .location {
                 font-weight: 300;
-                font-size: 1.4em;
+                font-size: 24px;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                max-width: 20vw;
 
                 .icon {
                     height: 28px;

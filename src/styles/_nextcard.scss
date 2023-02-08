@@ -51,6 +51,10 @@
                     font-weight: 600;
                     font-size: 1.6em;
                     margin-right: 24px;
+                    max-width: 300px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             
                 .hours {
