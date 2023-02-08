@@ -14,20 +14,22 @@
     border: 1px solid rgba(255, 255, 255, 0.29);
     overflow: hidden;
 
-    @include flexCenter(column);
+    @include flexCenter(row);
     align-items: flex-start;
     justify-content: flex-start;
     margin-bottom: 24px;
 
     .content {
         @include flexCenter(row);
+        align-items: flex-start;
+        justify-content: flex-start;
         color: $black;
         width: 100%;
 
         .image {
             flex: 1;
             @include flexCenter(column);
-            overflow: hidden;
+            // overflow: hidden;
             height: 80px;
             width: 80px;
             object-fit: contain;
@@ -39,6 +41,7 @@
             justify-content: flex-start;
             align-items: flex-start;
             margin-left: 24px;
+            width: 100%;
             max-width: 600px;
 
             .header {
