@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPerson, faMapPin } from "@fortawesome/free-solid-svg-icons";
 import Image from 'next/image';
-import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal, Key } from 'react';
 
 export default function CurrentCard({event}) {
     return (
@@ -27,7 +26,7 @@ export default function CurrentCard({event}) {
                     <div className="speakers">
                         {console.log(event, event.speakers)}
                         {
-                            (typeof event?.speakers === "string" ? [event?.speakers] : event?.speakers ?? ["Más información próximamente"]).map((s: string, index: number) => <div key={index} className="speaker">
+                            (typeof event?.speakers === "string" ? [event?.speakers] : event?.speakers ?? ["Más información próximamente"]).map((s, index) => <div key={index} className="speaker">
                                 <FontAwesomeIcon className="icon" icon={faPerson}/>
                                 {"  "}
                                 {s.split(":")[0]}{" "}

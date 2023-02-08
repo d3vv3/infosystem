@@ -3,10 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 import axios from 'axios';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req, res) {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${process.env.WEATHER_LAT}&lon=${process.env.WEATHER_LON}&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`;
     try {
         const response = await axios.get(url);

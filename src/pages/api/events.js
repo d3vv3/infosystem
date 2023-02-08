@@ -1,6 +1,4 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next';
-
 import axios from 'axios';
 import moment from 'moment';
 import { parse } from 'node-html-parser';
@@ -8,10 +6,7 @@ import { parse } from 'node-html-parser';
 const ponentes = /Ponentes*:\s*<\/strong>\s*(.*?)<\/p>/
 const url = "https://foro.satelec.etsit.upm.es/api/activity/future"
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req, res) {
    try {
         const response = await axios.get(url);
         let activities = response.data.activities;
