@@ -1,0 +1,40 @@
+.status-container {
+    color: $white;
+
+    font-size: 1em;
+    padding-bottom: 24px;
+
+    .time {
+        mix-blend-mode: overlay;
+        font-weight: 800;
+        font-size: 4em;
+    }
+
+    .temp {
+        mix-blend-mode: overlay;
+        font-weight: 400;
+        font-size: 2em;
+        text-transform: uppercase;
+    }
+
+    .date {
+        mix-blend-mode: overlay;
+        font-weight: 400;
+        font-size: 2em;
+        margin: 0;
+    }
+
+    .emoji {
+        font-size: 1.6em;
+        mix-blend-mode: normal;
+    }
+
+    .location {
+        mix-blend-mode: overlay;
+        margin-top: 12px;
+        font-weight: 300;
+        font-size: 2em;
+        margin: 0;
+        display: inline;
+    }
+}

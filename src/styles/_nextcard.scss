@@ -1,0 +1,70 @@
+.next-card-container {
+    // height: 80px;
+    width: 92%;
+    border-radius: 24px;
+    background-color: rgba($color: $white, $alpha: 0.6);
+    color: $black;
+
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border: 1px solid rgba(255, 255, 255, 0.29);
+    overflow: hidden;
+
+    @include flexCenter(column);
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+
+    .content {
+        @include flexCenter(row);
+        color: $black;
+        width: 100%;
+
+        .image {
+            flex: 1;
+            @include flexCenter(column);
+            overflow: hidden;
+            height: 80px;
+            width: 80px;
+            object-fit: contain;
+        }
+
+        .info {
+            flex: 6;
+            @include flexCenter(column);
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-left: 24px;
+
+            .header {
+                @include flexCenter(row);
+                width: 100%;
+                justify-content: space-between;
+                color: $black;
+                margin-bottom: 12px;
+        
+                .company {
+                    font-weight: 600;
+                    font-size: 1.6em;
+                    margin-right: 24px;
+                }
+            
+                .hours {
+                    font-weight: 300;
+                    font-size: 1.6em;
+                }
+            }
+
+            .next-talk-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 1.4em;
+            }
+        }
+    }
+}
