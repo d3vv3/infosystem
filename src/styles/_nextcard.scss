@@ -36,9 +36,10 @@
         .info {
             flex: 6;
             @include flexCenter(column);
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: flex-start;
             margin-left: 24px;
+            max-width: 600px;
 
             .header {
                 @include flexCenter(row);
