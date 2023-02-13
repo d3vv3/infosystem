@@ -16,14 +16,5 @@
         @include flexCenter(column);
         height: 100%;
         background-color: white;
-
-        .sponsors {
-            flex: 27;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            color: white;
-            @include flexCenter(column);
-        }
     }
 }
