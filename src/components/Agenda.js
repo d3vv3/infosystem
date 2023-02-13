@@ -9,7 +9,7 @@ import moment from 'moment';
 export default function Agenda() {
 
     const [events, setEvents] = useState([]);
-    const now = moment("02-28-2023 11:00", "MM-DD-YYYY HH:mm");
+    const now = moment("02-28-2023 13:00", "MM-DD-YYYY HH:mm");
 
     useEffect(() => {
         getEvents();

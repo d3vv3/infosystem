@@ -44,12 +44,11 @@ export default function CurrentCard({event}) {
                                 {s.split(":")[0]}{" "}
                                 {
                                     (s.split(":").length > 1)
-                                    ? <div className="scrollable">
-                                        :{" "}
-                                        <marquee className="scrollable" hspace={8} behavior="scroll" direction="left">
-                                            {s.split(":")[1]}
-                                        </marquee>
-                                    </div>
+                                    ? <span className="charge">
+                                        :{" "} <Marquee className="scrollable" gradientColor={"#ffff"}>
+                                            {" " + s.split(":")[1] + " "} {" "}
+                                        </Marquee>
+                                    </span>
                                     : null
                                 }
                             </div>)
