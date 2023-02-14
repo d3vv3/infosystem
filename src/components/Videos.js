@@ -20,7 +20,7 @@ export default function Videos() {
           {type: "image", href:"/assets/external/miercoles.jpg"},
           {type: "image", href:"/assets/external/cartel_linux.jpg"},
         ];
-        youtubeIds = interleave(youtubeIds, {type: "youtube", id: "KVXp02-_TVA"})
+        youtubeIds = interleave(youtubeIds, {type: "youtube", id: "URx3Jabq77Y"})
         setVideoIds(youtubeIds);
     } catch (error) {
         console.error("Something went wrong", error);
