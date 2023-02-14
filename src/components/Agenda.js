@@ -9,14 +9,17 @@ import moment from 'moment';
 export default function Agenda() {
 
     const [events, setEvents] = useState([]);
-    const [now, setNow] = useState(moment())
+    const [tomorrow, setTomorrow] = useState([]);
+    const [now, setNow] = useState(moment());
     // const now = moment("02-28-2023 13:00", "MM-DD-YYYY HH:mm");
 
     useEffect(() => {
         getEvents();
+        getTomorrow();
         setInterval(() => {
-            getEvents()
-            setNow(moment())
+            getEvents();
+            setNow(moment());
+            getTomorrow();
         }, 60*1000);
     }, []);
 
@@ -28,6 +31,16 @@ export default function Agenda() {
             console.error("Something went wrong", error);
         }
         
+        
+    }
+
+    const getTomorrow = async () => {
+        try {
+            const response = await axios.get("/api/tomorrow");
+            setTomorrow(response.data);
+        } catch (error) {
+            console.error("Something went wrong", error);
+        }
         
     }
 
@@ -66,6 +79,19 @@ export default function Agenda() {
                             events.filter(
                                 e => now <= moment(e?.startDate, "YYYY-MM-DDTHH:mm:ss.000Z")
                                 ).map((e, index) => <NextCard key={index} event={e}/>)
+                        }  
+                    </>
+                    : null
+                }
+
+                {
+                    (
+                        tomorrow.length > 0
+                    )
+                    ? <>
+                        <p className="title">Tomorrow</p>
+                        {
+                            tomorrow.map((e, index) => <NextCard key={index} event={e}/>)
                         }  
                     </>
                     : null
