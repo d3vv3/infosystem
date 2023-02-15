@@ -19,7 +19,7 @@ export default async function handler(req, res) {
             activityDate.year() == today.year()
             return result;
         });
-        res.status(200).json(filtered.map(a => (a?.institution?.media ?? [])).flat());
+        res.status(200).json(filtered.map(a => (a?.institution?.media.filter(m => m.type === "youtube") ?? [])).flat());
    } catch (error) {
         console.error(error);
         res.status(400);
