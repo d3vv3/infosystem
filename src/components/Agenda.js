@@ -91,7 +91,7 @@ export default function Agenda() {
                         <p className="title">{
                         moment().add(1, "days") === moment(tomorrow[0].startDate, "YYYY-MM-DDTHH:mm:ss.000Z")
                         ? "Tomorrow"
-                        : moment(tomorrow[0].startDate, "YYYY-MM-DDTHH:mm:ss.000Z").format("dddd, MMMM Do, YYYY")
+                        : moment(tomorrow[0].startDate, "YYYY-MM-DDTHH:mm:ss.000Z").format("dddd, MMMM Do")
                         }</p>
                         {
                             tomorrow.filter(
