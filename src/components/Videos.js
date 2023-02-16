@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import YouTube from 'react-youtube';
+import ReactPlayer from 'react-player';
 
 const interleave = (arr, thing) => [].concat(...arr.map(n => [n, thing])).slice(0, -1)
 
@@ -20,7 +21,8 @@ export default function Videos() {
           {type: "image", href: "/assets/external/cartel_linux.jpg"},
           {type: "image", href: "/assets/external/miercoles.jpg"}
         ];
-        youtubeIds = interleave(youtubeIds, {type: "youtube", id: "URx3Jabq77Y"})
+        youtubeIds = interleave(youtubeIds, {type: "video", url: "assets/videos/VIDEOWALL_4.mp4"});
+        // youtubeIds = interleave(youtubeIds, {type: "youtube", id: "URx3Jabq77Y"})
         setVideoIds(youtubeIds);
     } catch (error) {
         console.error("Something went wrong", error);
@@ -41,6 +43,18 @@ export default function Videos() {
           setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1)
         }}
       />;
+    }
+    if (videoIds[currentObject]?.type === "video") {
+      return <ReactPlayer
+        playing
+        muted
+        // controls
+        className="custom-video"
+        url={videoIds[currentObject]?.url}
+        onEnded={(e) => {
+          setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1)
+        }
+      } />
     }
     return null;
   }
