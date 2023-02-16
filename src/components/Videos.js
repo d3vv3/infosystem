@@ -17,8 +17,8 @@ export default function Videos() {
           return {type: "youtube", id: v.youtube.id}
         });
         youtubeIds = [...youtubeIds,
-          {type: "image", href:"/assets/external/miercoles.jpg"},
-          {type: "image", href:"/assets/external/cartel_linux.jpg"},
+          {type: "image", href: "/assets/external/cartel_linux.jpg"},
+          {type: "image", href: "/assets/external/miercoles.jpg"}
         ];
         youtubeIds = interleave(youtubeIds, {type: "youtube", id: "URx3Jabq77Y"})
         setVideoIds(youtubeIds);

@@ -89,7 +89,7 @@ export default function Agenda() {
                         tomorrow.length > 0
                     )
                     ? <>
-                        <p className="title">Tomorrow</p>
+                        <p className="title">Monday, 20 February</p>
                         {
                             tomorrow.map((e, index) => <NextCard key={index} event={e}/>)
                         }  

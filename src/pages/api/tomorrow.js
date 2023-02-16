@@ -10,8 +10,8 @@ export default async function handler(req, res) {
    try {
         const response = await axios.get(url);
         let activities = response.data.activities;
-        const tomorrow = moment().add(1,'days');
-        // const tomorrow = moment("02-28-2023", "MM-DD-YYYY");
+        // const tomorrow = moment().add(1,'days');
+        const tomorrow = moment("02-20-2023", "MM-DD-YYYY");
         const filtered = activities.filter((a) => {
             const activityDate = moment(a.date, "YYYY-MM-DDTHH:mm:ss.000Z");
             let result = activityDate.date() == tomorrow.date() &&

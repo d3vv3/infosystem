@@ -1,6 +1,6 @@
 .videos-container {
-    flex: 90;
-    height: 100%;
+    flex: 80;
+    // height: 100%;
     width: 100%;
     overflow: hidden;
 
@@ -15,8 +15,9 @@
     }
 
     .youtube-video {
-        width: 100%;
         height: 100%;
+        width: 100%;
+        // padding-bottom: 56.25%; /* 16:9 */
 
         iframe {
             width: 100%;
