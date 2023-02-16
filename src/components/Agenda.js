@@ -11,15 +11,14 @@ export default function Agenda() {
     const [events, setEvents] = useState([]);
     const [tomorrow, setTomorrow] = useState([]);
     const [now, setNow] = useState(moment());
-    // const now = moment("02-28-2023 13:00", "MM-DD-YYYY HH:mm");
 
     useEffect(() => {
         getEvents();
-        getTomorrow();
+        getNext();
         setInterval(() => {
             getEvents();
             setNow(moment());
-            getTomorrow();
+            getNext();
         }, 60*1000);
     }, []);
 
@@ -34,9 +33,9 @@ export default function Agenda() {
         
     }
 
-    const getTomorrow = async () => {
+    const getNext = async () => {
         try {
-            const response = await axios.get("/api/tomorrow");
+            const response = await axios.get("/api/next");
             setTomorrow(response.data);
         } catch (error) {
             console.error("Something went wrong", error);
@@ -89,9 +88,16 @@ export default function Agenda() {
                         tomorrow.length > 0
                     )
                     ? <>
-                        <p className="title">Monday, 20 February</p>
+                        <p className="title">{
+                        moment().add(1, "days") === moment(tomorrow[0].startDate, "YYYY-MM-DDTHH:mm:ss.000Z")
+                        ? "Tomorrow"
+                        : moment(tomorrow[0].startDate, "YYYY-MM-DDTHH:mm:ss.000Z").format("dddd, MMMM Do, YYYY")
+                        }</p>
                         {
-                            tomorrow.map((e, index) => <NextCard key={index} event={e}/>)
+                            tomorrow.filter(
+                                a => moment(tomorrow[0].startDate, "YYYY-MM-DDTHH:mm:ss.000Z").day() === moment(a.startDate, "YYYY-MM-DDTHH:mm:ss.000Z").day() &&
+                                moment(tomorrow[0].startDate, "YYYY-MM-DDTHH:mm:ss.000Z").month() === moment(a.startDate, "YYYY-MM-DDTHH:mm:ss.000Z").month()
+                                ).map((e, index) => <NextCard key={index} event={e}/>)
                         }  
                     </>
                     : null

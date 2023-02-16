@@ -17,7 +17,7 @@ export default function NextCard({event}) {
                 <div className="info">
                     <div className="header">
                         {
-                            ((event?.company ?? "").length > 18) ?
+                            ((event?.company ?? "").length > 14) ?
                             <Marquee className="company scrollable" gradientColor={"#ffff"}>
                                 <span style={{marginRight: 12}}>{event?.company ?? ""}</span></Marquee>
                             : <span className="company">{event?.company ?? ""} {" "}</span>

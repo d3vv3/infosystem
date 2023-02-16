@@ -61,6 +61,9 @@ export default function Videos() {
         // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
         mute: 1,
+        quality: "high",
+        rel: "0",
+        vq: "hd720"
       },
     };
 

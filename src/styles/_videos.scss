@@ -1,10 +1,10 @@
 .videos-container {
-    flex: 80;
+    flex: 70;
     // height: 100%;
     width: 100%;
     overflow: hidden;
 
-    background-color: $black;
+    background-color: $white;
     @include flexCenter(column);
 
     .cartel {
