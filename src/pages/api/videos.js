@@ -1,7 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import axios from 'axios';
 import moment from 'moment';
-import { parse } from 'node-html-parser';
 
 const ponentes = /Ponentes*:\s*<\/strong>\s*(.*?)<\/p>/
 const url = "https://foro.satelec.etsit.upm.es/api/activity/future"
@@ -16,7 +15,8 @@ export default async function handler(req, res) {
             const activityDate = moment(a.date, "YYYY-MM-DDTHH:mm:ss.000Z");
             let result = activityDate.date() == today.date() &&
             activityDate.month() == today.month() &&
-            activityDate.year() == today.year()
+            activityDate.year() == today.year() ||
+            (a?.institution?.isSponsor)
             return result;
         });
         res.status(200).json(filtered.map(a => (a?.institution?.media.filter(m => m.type === "youtube") ?? [])).flat());

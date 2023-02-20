@@ -21,7 +21,7 @@ export default function Videos() {
           {type: "image", href: "/assets/external/cartel_linux.jpg"},
           {type: "image", href: "/assets/external/miercoles.jpg"}
         ];
-        youtubeIds = interleave(youtubeIds, {type: "video", url: "assets/videos/VIDEOWALL_4.mp4"});
+        youtubeIds = interleave(youtubeIds, {type: "video", url: "assets/videos/VIDEOWALL.mp4"});
         // youtubeIds = interleave(youtubeIds, {type: "youtube", id: "URx3Jabq77Y"})
         setVideoIds(youtubeIds);
     } catch (error) {
