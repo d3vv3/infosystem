@@ -29,6 +29,13 @@ export default function Videos() {
     }
 }
 
+useEffect(() => {
+  if (objectComponent === null || objectComponent === undefined) {
+    setCurrentObject(0);
+    setObjectComponent(getNewObject());
+  }
+}, [objectComponent])
+
   const getNewObject = () => {
     if (videoIds[currentObject]?.type === "image") {
       setTimeout(() => setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1), 15*1000);
