@@ -17,9 +17,10 @@ export default function Videos() {
         let youtubeIds = response.data.map(v => {
           return {type: "youtube", id: v.youtube.id}
         });
-        youtubeIds = [...youtubeIds,
+        youtubeIds = [
+          ...youtubeIds,
           {type: "image", href: "/assets/external/cartel_linux.jpg"},
-          {type: "image", href: "/assets/external/miercoles.jpg"}
+          // {type: "image", href: "/assets/external/miercoles.jpg"}
         ];
         youtubeIds = interleave(youtubeIds, {type: "video", url: "assets/videos/VIDEOWALL.mp4"});
         // youtubeIds = interleave(youtubeIds, {type: "youtube", id: "URx3Jabq77Y"})
@@ -47,7 +48,12 @@ useEffect(() => {
         videoId={videoIds[currentObject].id}
         opts={opts}
         onEnd={(e) => {
-          setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1)
+          setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1);
+        }}
+        onError={(e) => {
+          console.log(e);
+          console.log("Should skip");
+          setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1);
         }}
       />;
     }
