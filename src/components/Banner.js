@@ -5,8 +5,8 @@ export default function Banner() {
   return (
       <div className="sponsors">
         <div className="row">
-          <img className="logo-apple" src="/assets/LOGO_APPLE.png" />
           <img className="logo-airbus" src="/assets/LOGO_AIRBUS.png" />
+          <img className="logo-apple" src="/assets/LOGO_APPLE.png" />
           <img className="logo-axa" src="/assets/LOGO_AXA.png" />
           <img className="logo-cognizant" src="/assets/LOGO_COGNIZANT.png" />
           <img className="logo-deloitte" src="/assets/LOGO_DELOITTE.png" />
