@@ -8,7 +8,7 @@ export default function CurrentCard({event}) {
         <div className="card-container">
             <div className="header">
                 {
-                    ((event?.company ?? "").length > 18) ?
+                    ((event?.company ?? "").length > 24) ?
                     <Marquee className="company scrollable" gradientColor={"#ffff"}>
                        <span style={{marginRight: 12}}>{event?.company ?? ""}</span></Marquee>
                     : <span className="company">{event?.company ?? ""} {" "}</span>

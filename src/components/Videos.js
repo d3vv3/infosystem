@@ -20,7 +20,9 @@ export default function Videos() {
         youtubeIds = [
           ...youtubeIds,
           {type: "image", href: "/assets/external/cartel_linux.jpg"},
-          // {type: "image", href: "/assets/external/miercoles.jpg"}
+          {type: "image", href: "/assets/external/miercoles_1.jpg"},
+          {type: "image", href: "/assets/external/miercoles_2.jpg"},
+          {type: "image", href: "/assets/external/internacional.jpg"},
         ];
         youtubeIds = interleave(youtubeIds, {type: "video", url: "assets/videos/VIDEOWALL.mp4"});
         // youtubeIds = interleave(youtubeIds, {type: "youtube", id: "URx3Jabq77Y"})
@@ -93,6 +95,8 @@ useEffect(() => {
         vq: "hd720"
       },
     };
+
+  //  ${videoIds[currentObject]?.type === "video" ? "fullscreen" : ""}
 
   return (
       <div className="videos-container">
