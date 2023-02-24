@@ -74,8 +74,12 @@ useEffect(() => {
       } />
     }
     if (videoIds[currentObject]?.type === "timer") {
-      setTimeout(() => setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1),
-      Date.now() <= new Date("2023-02-28T10:00:00.000Z") ? 15*1000 : 0);
+      if (Date.now() <= new Date("2023-02-28T10:00:00.000Z")) {
+        setTimeout(() => setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1),
+        15*1000);
+      } else {
+        setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1)
+      }
       return <Timer />
     }
 
