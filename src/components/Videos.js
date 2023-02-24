@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import YouTube from 'react-youtube';
 import ReactPlayer from 'react-player';
+import Timer from "./Timer";
 
 const interleave = (arr, thing) => [].concat(...arr.map(n => [n, thing])).slice(0, -1)
 
@@ -18,14 +19,15 @@ export default function Videos(props) {
           return {type: "youtube", id: v.youtube.id}
         });
         youtubeIds = [
-          ...youtubeIds,
-          {type: "image", href: "/assets/external/cartel_linux.jpg"},
+          {type: "timer"},
+          ...youtubeIds.sort((a, b) => 0.5 - Math.random()),
+          {type: "timer"},
           {type: "image", href: "/assets/external/miercoles_1.jpg"},
           {type: "image", href: "/assets/external/miercoles_2.jpg"},
           {type: "image", href: "/assets/external/international.jpg"},
+          {type: "timer"},
         ];
         youtubeIds = interleave(youtubeIds, {type: "video", url: "assets/videos/VIDEOWALL.mp4"});
-        // youtubeIds = interleave(youtubeIds, {type: "youtube", id: "URx3Jabq77Y"})
         setVideoIds(youtubeIds);
     } catch (error) {
         console.error("Something went wrong", error);
@@ -71,12 +73,18 @@ useEffect(() => {
         }
       } />
     }
+    if (videoIds[currentObject]?.type === "timer") {
+      setTimeout(() => setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1),
+      Date.now() <= new Date("2023-02-28T10:00:00.000Z") ? 15*1000 : 0);
+      return <Timer />
+    }
+
     return null;
   }
 
   useEffect(() => {
     setObjectComponent(getNewObject());
-    props.setIsFullscreen(videoIds[currentObject]?.type === "video" ? true : false);
+    props.setIsFullscreen((videoIds[currentObject]?.type === "video" || videoIds[currentObject]?.type === "timer") ? true : false);
   }, [currentObject, videoIds]);
 
   useEffect(() => {

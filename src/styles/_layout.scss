@@ -21,5 +21,6 @@
 
     .fullscreen {
         background-color: $black;
+        @include flexCenter(column);
     }
 }
