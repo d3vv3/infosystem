@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player';
 
 const interleave = (arr, thing) => [].concat(...arr.map(n => [n, thing])).slice(0, -1)
 
-export default function Videos() {
+export default function Videos(props) {
 
   const [videoIds, setVideoIds] = useState([]);
   const [currentObject, setCurrentObject] = useState(0);
@@ -76,6 +76,7 @@ useEffect(() => {
 
   useEffect(() => {
     setObjectComponent(getNewObject());
+    props.setIsFullscreen(videoIds[currentObject]?.type === "video" ? true : false);
   }, [currentObject, videoIds]);
 
   useEffect(() => {

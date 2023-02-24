@@ -6,7 +6,7 @@ import Status from "./Status";
 
 import moment from 'moment';
 
-export default function Agenda() {
+export default function Agenda(props) {
 
     const [events, setEvents] = useState([]);
     const [tomorrow, setTomorrow] = useState([]);
@@ -44,7 +44,7 @@ export default function Agenda() {
     }
 
     return (
-        <div className="agenda-container">
+        <div className={`agenda-container ${props.isFullscreen ? "fullscreen" : ""}`}>
             <video className="background-video" autoPlay loop muted>
                 <source src="/assets/gradient.webm" type="video/webm" />
             </video>

@@ -50,3 +50,10 @@
         width: 40px;
     }
 }
+
+.fullscreen {
+    flex: 0;
+    height: 0vh;
+    width: 0vw;
+    overflow: hidden;
+}

@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Banner() {
+export default function Banner(props) {
 
   return (
-      <div className="sponsors">
+      <div className={`sponsors ${props.isFullscreen ? "fullscreen" : ""}`}>
         <div className="row">
           <img className="logo-airbus" src="/assets/LOGO_AIRBUS.png" />
           {/* <img className="logo-apple" src="/assets/LOGO_APPLE.png" /> */}
