@@ -69,15 +69,15 @@ useEffect(() => {
         }
       } />
     }
-    if (videoIds[currentObject]?.type === "timer") {
-      if (Date.now() <= new Date("2023-02-28T10:00:00.000Z")) {
-        setTimeout(() => setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1),
-        15*1000);
-      } else {
-        setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1)
-      }
-      return <Timer />
-    }
+    // if (videoIds[currentObject]?.type === "timer") {
+    //   if (Date.now() <= new Date("2023-02-28T10:00:00.000Z")) {
+    //     setTimeout(() => setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1),
+    //     15*1000);
+    //   } else {
+    //     setCurrentObject(currentObject === videoIds.length - 1 ? 0 : currentObject + 1)
+    //   }
+    //   return <Timer />
+    // }
 
     return null;
   }
