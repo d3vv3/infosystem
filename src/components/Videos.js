@@ -22,6 +22,7 @@ export default function Videos(props) {
           {type: "image", href: "/assets/external/miercoles_1.jpg"},
           {type: "image", href: "/assets/external/miercoles_2.jpg"},
           {type: "image", href: "/assets/external/international.jpg"},
+          {type: "image", href: "/assets/external/charla.jpg"},
         ];
         youtubeIds = interleave(youtubeIds, {type: "video", url: "assets/videos/VIDEOWALL.mp4"});
         setVideoIds(youtubeIds);
